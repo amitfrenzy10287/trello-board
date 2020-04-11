@@ -6,3 +6,6 @@ npm install
 
 # To run the application
 npm start
+
+# To run the test 
+npm test
