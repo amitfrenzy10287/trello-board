@@ -3,11 +3,9 @@ templateCard.innerHTML = `
   <div class="card" draggable="true">
     <div class="card-edit-btn"></div>
     <div class="card-delete-btn"></div>
-
     <div class="card-id"></div>
     <div class="card-title"></div>
     <div hidden class="card-description"></div>
-
     <input hidden class="card-title card-title-input" />
     <textarea hidden class="card-description card-description-input"></textarea>
     <div class="card-description"></div>
@@ -18,20 +16,15 @@ templateCard.innerHTML = `
 class TrelloCard extends HTMLElement {
   constructor() {
     super();
-
-    // initial state
     this._id = '';
     this._title = '';
     this._description = '';
     this._columnId = null;
-
     this.__mode = 'view';
   }
 
   connectedCallback() {
     this.appendChild(templateCard.content.cloneNode(true));
-
-    // get local references
     this.$card = this.querySelector('.card');
     this.$id = this.querySelector('.card-id');
     this.$title = this.querySelector('.card-title');
@@ -43,34 +36,23 @@ class TrelloCard extends HTMLElement {
     this.$editButton = this.querySelector('.card-edit-btn');
     this.$saveButton = this.querySelector('.card-save-btn');
     this.$deleteButton = this.querySelector('.card-delete-btn');
-
-    // listen for events
     this.$editButton.addEventListener('click', this.toggleEdit.bind(this));
     this.$saveButton.addEventListener('click', this.saveCard.bind(this));
     this.$deleteButton.addEventListener('click', this.deleteCard.bind(this));
     this.$card.addEventListener('click', this.toggleDescription.bind(this));
-
-    // handle dnd
     this.$card.addEventListener('dragstart', this.onDragStart.bind(this));
 
     this.$titleInput.hidden = true;
 
     subscribeToSearch(this.displayAccordinglyToSearch.bind(this));
-
-    // render
     this._render();
   }
 
-  // displayAccordinglyToSearch will show or hide the card depending
-  // of the search query. This way we won't rerender the board entirely.
   displayAccordinglyToSearch(searchValue) {
     if (!searchValue) {
       this.hidden = false;
       return;
     }
-
-    // if either the title or the description of the card includes
-    // the query we will display the card
     const containsQuery =
       this._title.includes(searchValue) || this._description.includes(searchValue);
 
@@ -155,7 +137,6 @@ class TrelloCard extends HTMLElement {
       JSON.stringify({
         id: this._id,
         columnId: this._columnId,
-        // add other fields otherwise the JSON-SERVER api will remove them
         description: this._description,
         title: this._title,
       })

@@ -11,6 +11,10 @@
     {
       "title": "In Development",
       "id": 3
+    },
+    {
+      "title": "In Production",
+      "id": 4
     }
   ],
   "cards": [
@@ -51,10 +55,16 @@
       "description": "this is my another card"
     },
     {
+      "id": 7,
       "title": "Add a new header to home page",
-      "description": "",
       "columnId": "3",
-      "id": 7
+      "description": "Test header "
+    },
+    {
+      "title": "Update the slider image",
+      "description": "Test slider image here",
+      "columnId": "4",
+      "id": 8
     }
   ]
 }

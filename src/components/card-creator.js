@@ -30,7 +30,6 @@ class TrelloCardCreator extends HTMLElement {
       e.preventDefault();
 
       if (!this.$titleInput.value) return;
-      // TODO: check unicity of title here ?
 
       this.dispatchEvent(
         new CustomEvent('cardCreation', {
