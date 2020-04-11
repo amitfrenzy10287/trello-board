@@ -1,0 +1,6 @@
+# Dependency directories
+node_modules/
+
+#misc
+.idea
+package-lock.json

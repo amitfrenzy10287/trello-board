@@ -1,0 +1,32 @@
+{
+  "name": "trello-board",
+  "version": "1.0.0",
+  "description": "This is simple trello like application designed and developed in webcomponents and vanilla js",
+  "main": "index.js",
+  "scripts": {
+    "start": "json-server --watch data/db.json  --static ./src",
+    "test-with-jest": "node ./node_modules/jest/bin/jest.js --testPathIgnorePatterns ./data/*",
+    "test": "start-server-and-test start http://localhost:3000 test-with-jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amitfrenzy10287/trello-board.git"
+  },
+  "keywords": [
+    "trello",
+    "webcomponents"
+  ],
+  "author": "Amit Upadhyay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amitfrenzy10287/trello-board/issues"
+  },
+  "homepage": "https://github.com/amitfrenzy10287/trello-board#readme",
+  "dependencies": {
+    "jest": "^25.3.0",
+    "jest-puppeteer": "^4.4.0",
+    "json-server": "^0.16.1",
+    "puppeteer": "^2.1.1",
+    "start-server-and-test": "^1.10.11"
+  }
+}

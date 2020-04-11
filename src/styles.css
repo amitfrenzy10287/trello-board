@@ -1,0 +1,322 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 236, 181);
+    color: #686868;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 14px;
+    line-height: 24px;
+    margin: 0 0 8px;
+}
+
+body,
+button,
+html,
+input,
+select,
+textarea {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.container{
+    display:flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+.top-bar {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    color: #ffffff;
+    padding: 8px 16px 8px 16px;
+    background-color: #ff551a;
+    margin: 0;
+    align-items: center;
+}
+
+.top-bar .title{
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.top-bar div:nth-of-type(1) {flex-grow: 2;}
+.top-bar div:nth-of-type(2) {flex-grow: 1;}
+
+textarea {
+    color: #686868;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    border-radius: 3px;
+    line-height: 20px;
+    padding: 8px 12px;
+    font: inherit;
+
+    background: #fff;
+    border: solid 1px #d9d9d9;
+    border-top: none;
+    display: block;
+    margin: 0;
+    transition: margin 85ms ease-in, background 85ms ease-in;
+    width: 100%;
+
+    resize: none;
+}
+
+input {
+    color: #686868;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    border-radius: 3px;
+    line-height: 20px;
+    padding: 8px 12px;
+    font: inherit;
+    background: #fff;
+    border: solid 2px #d9d9d9;
+    display: block;
+    margin: 0;
+    transition: margin 85ms ease-in, background 85ms ease-in;
+    width: 100%;
+}
+
+button.primary {
+    background-color: #ff551a;
+    box-shadow: 0 1px 0 0 #be3100;
+    border: none;
+    color: #fff;
+}
+
+button,
+button[type=submit] {
+    cursor: pointer;
+    font-weight: 700;
+    line-height: 20px;
+    margin: 8px 4px 0 0;
+    padding: 6px 12px;
+    text-align: center;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    border-radius: 3px;
+    transition-property: background-color, border-color, box-shadow;
+    transition-duration: 85ms;
+    transition-timing-function: ease;
+    font-size: 14px;
+}
+#app {
+    width: calc(100% - 32px);
+}
+#app-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#columns-section,
+#columns-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.column-wrapper {
+    width: 272px;
+    height: 100%;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    white-space: nowrap;
+    border: 5px solid transparent;
+}
+
+.column-wrapper.hovered {
+    border: dotted 5px black;
+}
+
+.column {
+    background-color: #dfe1e6;
+    border-radius: 3px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    position: relative;
+    white-space: normal;
+}
+
+.column-header {
+    flex: 0 0 auto;
+    padding: 10px 8px 8px;
+    position: relative;
+    min-height: 20px;
+}
+
+.column-edit-button {
+    position: absolute;
+    top: 4px;
+    right: 35px;
+    height: 24px;
+    width: 24px;
+    cursor:pointer;
+    background-size: 24px 24px;
+    background-image: url(/assets/icons/edit.png);
+}
+
+.column-delete-button {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    height: 24px;
+    width: 24px;
+    cursor:pointer;
+    background-size: 24px 24px;
+    background-image: url(/assets/icons/delete.png);
+}
+
+.column-header[hidden] {
+    display: none;
+}
+
+/* added margin to avoid the input field covering buttons*/
+.column-header-input {
+    margin-top: 24px;
+}
+
+.cards {
+    flex: 1 1 auto;
+    margin-bottom: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: 0 4px;
+    padding: 0 4px;
+    z-index: 1;
+    min-height: 0;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(9, 30, 66, .25);
+    cursor: pointer;
+    display: block;
+    margin-bottom: 8px;
+    max-width: 300px;
+    min-height: 32px;
+    position: relative;
+    text-decoration: none;
+    z-index: 0;
+
+    overflow: hidden;
+    padding: 32px 8px 30px;
+    position: relative;
+    z-index: 10;
+}
+
+.card-title {
+    clear: both;
+    display: block;
+    margin: 0;
+    overflow: hidden;
+    text-decoration: none;
+    word-wrap: break-word;
+    color: #172b4d;
+}
+
+#new-card-input {
+    box-shadow: none;
+    border: none;
+}
+
+.card-composer {
+    padding-bottom: 8px;
+}
+
+.mod-add {
+    background-color: #dfe1e6;
+    border-radius: 3px;
+    height: auto;
+    min-height: 32px;
+    padding: 4px;
+    transition: background 85ms ease-in, opacity 40ms ease-in, border-color 85ms ease-in;
+    margin-top: 4px;
+}
+
+.card-id {
+    color: #dddddd;
+    font-size: 0.8em;
+    display: none;
+}
+
+.card-edit-btn {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    height: 24px;
+    width: 24px;
+    cursor:pointer;
+    background-size: 24px 24px;
+    background-image: url(/assets/icons/edit.png);
+}
+
+.card-delete-btn {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    height: 24px;
+    width: 24px;
+    cursor:pointer;
+    background-size: 24px 24px;
+    background-image: url(/assets/icons/delete.png);
+}
+
+.card-title[hidden],
+.card-description[hidden] {
+    display: none;
+}
+
+.card-title-input,
+.card-creator-title-input {
+    width: 100%;
+}
+
+.card-description-input,
+.card-creator-description-input {
+    width: 100%;
+    border-top: none;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    margin-top: -1px;
+}
+
+.search {
+    position: relative;
+    padding-left: 4px;
+    padding-right: 4px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+.search input {
+    border: none;
+}
+
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    height: 24px;
+    width: 24px;
+    background-color: #FFF;
+    cursor:pointer;
+    background-size: 24px 24px;
+    background-image: url('/assets/icons/search.png');
+}
+
+#search {
+    padding-left: 42px;
+}
