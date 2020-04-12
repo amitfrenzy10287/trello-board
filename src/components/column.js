@@ -9,7 +9,9 @@ templateColumn.innerHTML = `
         <input hidden class="column-header column-header-input"/>
         <button hidden class="primary column-save-button">Save</button>
       </div>
+
       <div class="cards cards-container"></div>
+
       <div class="cards">
         <trello-card-creator></trello-card-creator>
       </div>

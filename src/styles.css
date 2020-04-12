@@ -116,6 +116,10 @@ button[type=submit] {
     display: flex;
     flex-direction: column;
 }
+#columns-section{
+    width: 100%;
+    padding: 12px 16px 16px 14px;
+}
 
 #columns-section,
 #columns-container {
@@ -124,8 +128,8 @@ button[type=submit] {
 }
 
 .column-wrapper {
-    width: 272px;
     height: 100%;
+    width: 100%;
     box-sizing: border-box;
     display: inline-block;
     vertical-align: top;

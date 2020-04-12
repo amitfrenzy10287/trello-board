@@ -26,9 +26,9 @@
     },
     {
       "id": 2,
-      "title": "Card 2",
+      "columnId": "2",
       "description": "Quisque et pellentesque sem.",
-      "columnId": 1
+      "title": "Card 2"
     },
     {
       "id": 3,
@@ -38,15 +38,15 @@
     },
     {
       "id": 4,
-      "title": "Card 4",
+      "columnId": "3",
       "description": "Quisque id scelerisque felis, sit amet scelerisque nunc.",
-      "columnId": 2
+      "title": "Card 4"
     },
     {
       "id": 5,
-      "title": "Card 5",
-      "columnId": "2",
-      "description": "This is card 5"
+      "columnId": "1",
+      "description": "This is card 5",
+      "title": "Card 5"
     },
     {
       "id": 6,
@@ -56,9 +56,9 @@
     },
     {
       "id": 7,
-      "title": "Add a new header to home page",
-      "columnId": "3",
-      "description": "Test header "
+      "columnId": "4",
+      "description": "Test header ",
+      "title": "Add a new header to home page"
     },
     {
       "title": "Update the slider image",
